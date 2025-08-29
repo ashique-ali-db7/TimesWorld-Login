@@ -1,0 +1,39 @@
+/* Custom Responsive Classes */
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+  
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Custom Spacing for Mobile/Desktop */
+.spacing-mobile-sm { padding: 8px; }
+.spacing-mobile-md { padding: 16px; }
+.spacing-mobile-lg { padding: 24px; }
+
+.spacing-desktop-sm { padding: 12px; }
+.spacing-desktop-md { padding: 24px; }
+.spacing-desktop-lg { padding: 32px; }
+
+@media (max-width: 767px) {
+  .spacing-responsive-sm { padding: 8px; }
+  .spacing-responsive-md { padding: 16px; }
+  .spacing-responsive-lg { padding: 24px; }
+}
+
+@media (min-width: 768px) {
+  .spacing-responsive-sm { padding: 12px; }
+  .spacing-responsive-md { padding: 24px; }
+  .spacing-responsive-lg { padding: 32px; }
+}

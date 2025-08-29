@@ -6,7 +6,10 @@ import App from './App'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
-
+import './styles/custom.css';
+import './styles/typography.css';
+import './styles/colors.css';
+import './styles/responsive.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>

@@ -1,0 +1,109 @@
+/* Import Bootstrap first */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Custom CSS Variables - Design Tokens */
+:root {
+  /* Colors from your design */
+  --color-primary: #587FFF;
+  --color-dark-primary: #3C3C3C;
+  --color-dark-secondary: #3E3E3E;
+  --color-white: #FCFCFC;
+  --color-text: #3C3C3C;
+
+  /* Typography - Desktop sizes */
+  --font-size-xs: 13px;
+  --font-size-base: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 32px;
+
+  /* Typography - Mobile sizes */
+  --font-size-lg-mobile: 16px;
+  --font-size-xl-mobile: 24px;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 375px;
+  --breakpoint-desktop: 1366px;
+
+  /* Container max-widths */
+  --container-mobile: 100%;
+  --container-desktop: 1366px;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Custom Container */
+.custom-container {
+  width: 100%;
+  max-width: var(--container-desktop);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 767px) {
+  .custom-container {
+    max-width: var(--container-mobile);
+    padding: 0 20px;
+  }
+}
+
+/* Placeholder color */
+.form-control::placeholder {
+  color: var(--color-text) !important;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Border + text color */
+.form-control {
+  border-color: var(--color-text) !important;
+  color: var(--color-text) !important;
+  border: 2px solid;
+  border-radius: 0 !important;
+  height: 48px;
+}
+
+/* On focus */
+.form-control:focus {
+  border-color: var(--color-text) !important;
+  box-shadow: none !important;
+  /* removes bootstrap blue glow */
+}
+
+.form-check-input {
+  border-color: var(--color-text) !important;
+  color: var(--color-text) !important;
+  border: 2px solid;
+  border-radius: 0 !important;
+  width: 32px;
+  height: 32px;
+}
+
+.form-check-label {
+  color: var(--color-text) !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  padding: 6px;
+  margin-left: 5px;
+}
+
+.btn {
+  font-weight: 600;
+  color: var(--color-white) ;
+  border-radius: 0 ;
+}

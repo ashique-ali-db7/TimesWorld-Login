@@ -1,0 +1,9 @@
+.child {
+  max-width: 290px !important;
+  min-width: 280px !important;
+  width: 100%;
+}
+
+.h-48 {
+  height: 48px;
+}

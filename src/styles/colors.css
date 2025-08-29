@@ -1,0 +1,39 @@
+/* Text Colors */
+.text-primary { color: var(--color-primary) !important; }
+.text-dark-primary { color: var(--color-dark-primary) !important; }
+.text-dark-secondary { color: var(--color-dark-secondary) !important; }
+
+/* Background Colors */
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-dark-primary { background-color: var(--color-dark-primary) !important; }
+.bg-dark-secondary { background-color: var(--color-dark-secondary) !important; }
+
+/* Border Colors */
+.border-primary { border-color: var(--color-primary) !important; }
+.border-dark-primary { border-color: var(--color-dark-primary) !important; }
+.border-dark-secondary { border-color: var(--color-dark-secondary) !important; }
+
+/* Button Variants */
+.btn-custom-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.btn-custom-primary:hover {
+  background-color: #4a6ecc;
+  border-color: #4a6ecc;
+  color: white;
+}
+
+.btn-custom-dark {
+  background-color: var(--color-dark-primary);
+  border-color: var(--color-dark-primary);
+  color: white;
+}
+
+.btn-custom-dark:hover {
+  background-color: var(--color-dark-secondary);
+  border-color: var(--color-dark-secondary);
+  color: white;
+}
