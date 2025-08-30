@@ -42,9 +42,9 @@ const Login = () => {
             </Form>
 
             <div className="d-flex align-items-center my-3">
-              <div className='flex-grow-1  m-0 ' style={{ borderTop: "2px solid #CFCFCF" }}></div>
+              <div className='flex-grow-1  m-0 bt' ></div>
               <span className="px-3 fw-bold text-xs">Or Sign In With</span>
-              <div className="flex-grow-1 m-0" style={{ borderTop: "2px solid #CFCFCF" }} />
+              <div className="flex-grow-1 m-0 bt" />
             </div>
             <div className="d-flex justify-content-center gap-3 mt-2">
               <i className=""><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
@@ -70,6 +70,7 @@ const Login = () => {
           md={6}
           className="desktop-only d-md-flex justify-content-center align-items-center"
         >
+          
         <img src="src/assets/images/login.png" alt="img" />
         </Col>
 

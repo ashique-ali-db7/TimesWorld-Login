@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Nav, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons';
 import './home.css';
-
+import Header from './header';
 const Home = () => {
   const [activeTab, setActiveTab] = useState('all');
 
@@ -60,96 +60,25 @@ const Home = () => {
     }
   };
 
-  const handleTabChange = (tabKey) => {
-    setActiveTab(tabKey);
-  };
 
   return (
     <div className="countries-dashboard">
       <Container fluid className="px-5">
-        
-        <Row className="dashboard-header align-items-center py-4">
-          <Col xs={12} md={6}>
-            <h2 className="dashboard-title text-lg font-semibold text-dark-primary mb-0">
-              Countries
-            </h2>
-          </Col>
-          
-          {/* Desktop Tabs */}
-          <Col md={6} className="d-none d-md-block">
-            <Nav variant="pills" className="custom-tabs justify-content-end">
-              <Nav.Item>
-                <Nav.Link
-                  active={activeTab === 'all'}
-                  onClick={() => handleTabChange('all')}
-                  className="tab-link"
-                >
-                  All
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  active={activeTab === 'asia'}
-                  onClick={() => handleTabChange('asia')}
-                  className="tab-link"
-                >
-                  Asia
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  active={activeTab === 'europe'}
-                  onClick={() => handleTabChange('europe')}
-                  className="tab-link"
-                >
-                  Europe
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Col>
-          
-          {/* Mobile Breadcrumbs */}
-          <Col xs={12} className="d-block d-md-none mt-3">
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb custom-breadcrumb mb-0">
-                <li className="breadcrumb-item">
-                  <button
-                    className={`breadcrumb-btn ${activeTab === 'all' ? 'active' : ''}`}
-                    onClick={() => handleTabChange('all')}
-                  >
-                    All
-                  </button>
-                </li>
-                <li className="breadcrumb-item">
-                  <button
-                    className={`breadcrumb-btn ${activeTab === 'asia' ? 'active' : ''}`}
-                    onClick={() => handleTabChange('asia')}
-                  >
-                    Asia
-                  </button>
-                </li>
-                <li className="breadcrumb-item">
-                  <button
-                    className={`breadcrumb-btn ${activeTab === 'europe' ? 'active' : ''}`}
-                    onClick={() => handleTabChange('europe')}
-                  >
-                    Europe
-                  </button>
-                </li>
-              </ol>
-            </nav>
-          </Col>
-        </Row>
+        <Header setActiveTab={setActiveTab} activeTab={activeTab} />
+        <Row className="welcome-section">
+          <Col xs={12} >
+            <div className='mobile-only'><div className="text-center my-2 ">
+              <div className="border-top border-2 border-dark-heading  mb-2"></div>
+              <h1 className="fw-bold text-dark-heading">WELCOME</h1>
+              <div className="border-top border-2 border-dark-heading   mt-2"></div>
+            </div></div>
 
-        {/* Welcome Section */}
-        <Row className="welcome-section py-4">
-          <Col xs={12}>
-            <div className="welcome-header text-center">
-              <hr className="welcome-line" />
-              <h1 className="welcome-title text-xl font-bold text-dark-primary">
-                WELCOME
-              </h1>
-              <hr className="welcome-line" />
+            <div className='desktop-only'>
+              <div className="d-flex align-items-center  justify-content-center my-2 ">
+                <span className="line top "></span>
+                <h1 className="mx-3 fw-bold text-dark-heading ">WELCOME</h1>
+                <span className="line bottom"></span>
+              </div>
             </div>
           </Col>
         </Row>
@@ -160,7 +89,7 @@ const Home = () => {
             {/* Large Card */}
             <Card className="content-card large-card h-100 border-0 shadow-sm">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center p-5">
-                
+
                 {/* Placeholder Icons */}
                 <div className="card-icons mb-4">
                   <div className="icon-group">
@@ -171,47 +100,39 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <h3 className="card-title text-lg font-semibold mb-3 text-dark-primary">
                   {tabData[activeTab].cards[0].title}
                 </h3>
                 <p className="card-text text-base text-dark-secondary mb-4">
                   {tabData[activeTab].cards[0].content}
                 </p>
-                
+
                 {/* Navigation Controls */}
                 <div className="card-navigation d-flex justify-content-center align-items-center gap-3">
-                  <Button 
-                    variant="outline-secondary" 
-                    size="sm" 
-                    className="nav-btn rounded-circle p-2"
-                  >
-                    <ChevronLeft size={16} />
-                  </Button>
-                  
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+</svg>
+
                   <div className="nav-dots d-flex gap-2">
                     <span className="nav-dot active"></span>
                     <span className="nav-dot"></span>
                     <span className="nav-dot"></span>
                   </div>
-                  
-                  <Button 
-                    variant="outline-secondary" 
-                    size="sm" 
-                    className="nav-btn rounded-circle p-2"
-                  >
-                    <ChevronRight size={16} />
-                  </Button>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+</svg>
                 </div>
               </Card.Body>
             </Card>
           </Col>
-          
+
           <Col xs={12} lg={4}>
             {/* Small Card */}
             <Card className="content-card small-card h-100 border-0 shadow-sm">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center p-4">
-                
+
                 {/* Placeholder Icons */}
                 <div className="card-icons mb-3">
                   <div className="icon-group small">
@@ -222,7 +143,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <h4 className="card-title text-base font-semibold mb-2 text-dark-primary">
                   {tabData[activeTab].cards[1].title}
                 </h4>

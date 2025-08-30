@@ -9,16 +9,19 @@
   --color-dark-secondary: #3E3E3E;
   --color-white: #FCFCFC;
   --color-text: #3C3C3C;
+  --color-heading: #3D3D3D;
 
   /* Typography - Desktop sizes */
   --font-size-xs: 13px;
   --font-size-base: 16px;
   --font-size-lg: 24px;
   --font-size-xl: 32px;
+  --font-size-xxl: 40px;
 
   /* Typography - Mobile sizes */
   --font-size-lg-mobile: 16px;
   --font-size-xl-mobile: 24px;
+  --font-size-xxl-mobile: 32px;
 
   /* Breakpoints */
   --breakpoint-mobile: 375px;

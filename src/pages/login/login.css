@@ -7,3 +7,7 @@
 .h-48 {
   height: 48px;
 }
+
+.bt{
+  border-top: 2px solid var(--color-text) !important;
+}
