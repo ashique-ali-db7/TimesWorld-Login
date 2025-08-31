@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel, Card } from 'react-bootstrap';
 import styles from './index.module.css';
-import Shapes from '../../assets/images/shapes.png';
+import shapes from '../../assets/images/shapes.png';
 
 const CustomCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,7 +40,7 @@ const CustomCarousel = () => {
                 <div className={styles.slideContent}>
                   <div className={styles.slideIcons}>
                     <img
-                      src={Shapes}
+                      src={shapes}
                       alt="shapes"
                       className={styles.customImg}
                     />
