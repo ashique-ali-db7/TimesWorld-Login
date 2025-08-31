@@ -1,33 +1,23 @@
-/* NAVBAR */
-.countries-navbar {
+
+.countriesNavbar {
   background: transparent !important;
   border: none;
   padding: 0;
 }
 
-.countries-navbar .navbar-toggler {
-  border: none;
-  padding: 4px 8px;
-  background: none;
-}
-
-.countries-navbar .navbar-toggler:focus {
-  box-shadow: none;
-}
-
-.countries-brand {
+.countriesBrand {
   color: var(--color-heading) !important;
   font-size: var(--font-size-lg) !important;
   font-weight: 700 !important;
-  text-decoration: none;
   margin: 0;
+  text-decoration: none;
 }
 
-.countries-brand:hover {
+.countriesBrand:hover {
   color: var(--color-dark-primary) !important;
 }
 
-.custom-navbar-toggler {
+.customNavbarToggler {
   border: none !important;
   padding: 8px 12px;
   background: none;
@@ -35,85 +25,74 @@
   transition: background-color 0.3s ease;
 }
 
-.custom-navbar-toggler:hover {
+.customNavbarToggler:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.custom-navbar-toggler:focus {
+.customNavbarToggler:focus {
   box-shadow: none !important;
 }
 
-.custom-navbar-toggler .navbar-toggler-icon {
+.customNavbarToggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2860, 60, 60, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   width: 20px;
   height: 15px;
 }
 
-/* Desktop Navigation */
-.countries-nav-link {
-  color: #8B8B8B !important;
+.countriesNavLink {
+  color: #8b8b8b !important;
   font-size: var(--font-size-base) !important;
   font-weight: 600 !important;
   padding: 8px 20px !important;
-  border-radius: 0;
   border-bottom: 2px solid transparent !important;
-  text-decoration: none;
   transition: all 0.3s ease;
-  position: relative;
 }
 
-.countries-nav-link:hover {
+.countriesNavLink:hover {
   color: var(--color-dark-secondary) !important;
   border-bottom-color: var(--color-dark-secondary);
 }
 
-.countries-nav-link.active {
+.countriesNavLink.active {
   color: var(--color-dark-secondary) !important;
   border-bottom-color: var(--color-dark-secondary) !important;
-  font-weight: 600;
 }
 
-/* Mobile Offcanvas Styling */
-.countries-offcanvas {
+.countriesOffcanvas {
   width: 280px;
 }
 
-.countries-offcanvas-header {
+.offcanvasHeader {
   border-bottom: 1px solid #e9ecef;
   padding: 20px 24px;
 }
 
-.countries-offcanvas-title {
+.offcanvasTitle {
   color: var(--color-heading);
   font-size: var(--font-size-lg);
   font-weight: 600;
 }
 
-.countries-offcanvas-body {
+.offcanvasBody {
   padding: 24px;
 }
 
-.countries-mobile-nav {
-  gap: 8px;
-}
-
-.countries-mobile-link {
+.mobileLink {
   color: var(--color-dark-secondary) !important;
   font-size: var(--font-size-base) !important;
   font-weight: 500;
   padding: 12px 16px !important;
   border-radius: 8px;
-  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.countries-mobile-link:hover {
+.mobileLink:hover {
   background-color: rgba(88, 127, 255, 0.1) !important;
   color: var(--color-dark-primary) !important;
 }
 
-.countries-mobile-link.active {
+.activeMobile {
   background-color: var(--color-dark-primary) !important;
-  color: white !important;
+  color: #fff !important;
   font-weight: 600;
 }

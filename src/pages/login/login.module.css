@@ -11,3 +11,7 @@
 .bt{
   border-top: 2px solid var(--color-text) !important;
 }
+.link{
+  color: #587FFF!important;
+  font-weight: 600;
+}

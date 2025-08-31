@@ -3,23 +3,5 @@ $primary: #587FFF;
 $dark: #3C3C3C;
 $secondary: #3E3E3E;
 
-// Custom breakpoints to match your design
-$grid-breakpoints: (
-  xs: 0,
-  sm: 375px,  // Your mobile breakpoint
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1366px // Your desktop breakpoint
-);
 
-$container-max-widths: (
-  sm: 375px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1366px
-);
-
-// Import Bootstrap
 @import "bootstrap/scss/bootstrap";

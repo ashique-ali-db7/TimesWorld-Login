@@ -1,83 +1,86 @@
-import { useState } from "react";
-import { Container, Row, Col, Nav,  Navbar,Offcanvas } from 'react-bootstrap';
-import './index.css';
+import { useEffect, useState } from "react";
+import { Container, Row, Col, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import styles from "./index.module.css";
+import { useDispatch } from "react-redux";
+import { setRegion } from "../../slices/countriesSlice";
 const Header = ({ setActiveTab, activeTab }) => {
+
     const [showOffcanvas, setShowOffcanvas] = useState(false);
+    const dispatch = useDispatch()
     const handleTabChange = (tab) => {
+        dispatch(setRegion(tab))
         setActiveTab(tab);
-        setShowOffcanvas(false); // Close mobile menu after selection
+        setShowOffcanvas(false);
     };
+
+
+    useEffect(() => {
+        dispatch(setRegion("All"));
+        setActiveTab("All");
+    }, [dispatch, setActiveTab]);
+
     return (
-        <Row className="dashboard-header py-2">
+        <Row className="py-2">
             <Col xs={12}>
-                <Navbar expand="sm" className="countries-navbar px-0">
+                <Navbar expand="sm" className={styles.countriesNavbar}>
                     <Container fluid className="px-0">
 
-                        <Navbar.Brand className="countries-brand  mb-0">
+                        <Navbar.Brand className={styles.countriesBrand}>
                             Countries
                         </Navbar.Brand>
 
+
                         <Navbar.Toggle
                             aria-controls="countries-navbar-nav"
-                            className="custom-navbar-toggler "
+                            className={styles.customNavbarToggler}
                             onClick={() => setShowOffcanvas(true)}
                         />
 
-                        <Navbar.Collapse id="countries-navbar-nav" className="justify-content-end desktop-only">
-                            <Nav className="countries-nav">
-                                <Nav.Link
-                                    className={`countries-nav-link ${activeTab === 'all' ? 'active' : ''}`}
-                                    onClick={() => handleTabChange('all')}
-                                >
-                                    All
-                                </Nav.Link>
-                                <Nav.Link
-                                    className={`countries-nav-link ${activeTab === 'asia' ? 'active' : ''}`}
-                                    onClick={() => handleTabChange('asia')}
-                                >
-                                    Asia
-                                </Nav.Link>
-                                <Nav.Link
-                                    className={`countries-nav-link ${activeTab === 'europe' ? 'active' : ''}`}
-                                    onClick={() => handleTabChange('europe')}
-                                >
-                                    Europe
-                                </Nav.Link>
+
+                        <Navbar.Collapse
+                            id="countries-navbar-nav"
+                            className="justify-content-end desktop-only"
+                        >
+                            <Nav>
+                                {["All", "Asia", "Europe"].map((tab) => (
+                                    <Nav.Link
+                                        key={tab}
+                                        className={`${styles.countriesNavLink} ${activeTab === tab ? styles.active : ""
+                                            }`}
+                                        onClick={() => handleTabChange(tab)}
+                                    >
+                                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                                    </Nav.Link>
+                                ))}
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
+
 
                     <Offcanvas
                         show={showOffcanvas}
                         onHide={() => setShowOffcanvas(false)}
                         placement="end"
-                        className="countries-offcanvas"
+                        className={styles.countriesOffcanvas}
                     >
-                        <Offcanvas.Header closeButton className="countries-offcanvas-header">
-                            <Offcanvas.Title className="countries-offcanvas-title">
+                        <Offcanvas.Header closeButton className={styles.offcanvasHeader}>
+                            <Offcanvas.Title className={styles.offcanvasTitle}>
                                 Countries
                             </Offcanvas.Title>
                         </Offcanvas.Header>
-                        <Offcanvas.Body className="countries-offcanvas-body">
-                            <Nav className="flex-column countries-mobile-nav">
-                                <Nav.Link
-                                    className={`countries-mobile-link ${activeTab === 'all' ? 'active' : ''}`}
-                                    onClick={() => handleTabChange('all')}
-                                >
-                                    All
-                                </Nav.Link>
-                                <Nav.Link
-                                    className={`countries-mobile-link ${activeTab === 'asia' ? 'active' : ''}`}
-                                    onClick={() => handleTabChange('asia')}
-                                >
-                                    Asia
-                                </Nav.Link>
-                                <Nav.Link
-                                    className={`countries-mobile-link ${activeTab === 'europe' ? 'active' : ''}`}
-                                    onClick={() => handleTabChange('europe')}
-                                >
-                                    Europe
-                                </Nav.Link>
+
+                        <Offcanvas.Body className={styles.offcanvasBody}>
+                            <Nav className="flex-column gap-2">
+                                {["All", "Asia", "Europe"].map((tab) => (
+                                    <Nav.Link
+                                        key={tab}
+                                        className={`${styles.mobileLink} ${activeTab === tab ? styles.activeMobile : ""
+                                            }`}
+                                        onClick={() => handleTabChange(tab)}
+                                    >
+                                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                                    </Nav.Link>
+                                ))}
                             </Nav>
                         </Offcanvas.Body>
                     </Offcanvas>

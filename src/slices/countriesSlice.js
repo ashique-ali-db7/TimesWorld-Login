@@ -12,12 +12,12 @@ return data
 const countriesSlice = createSlice({
 name: 'countries',
 initialState: {
-all: [], // original
-view: [], // filtered + paginated
+all: [], 
+view: [], 
 status: 'idle',
 error: null,
 filterRegion: 'All',
-pageSize: 20,
+pageSize: 6,
 page: 1,
 },
 reducers: {
@@ -25,6 +25,7 @@ setRegion: (state, { payload }) => {
 state.filterRegion = payload
 state.page = 1
 const list = payload === 'All' ? state.all : state.all.filter(c => c.region === payload)
+state.total = list.length
 state.view = list.slice(0, state.pageSize)
 },
 loadMore: (state) => {
@@ -39,8 +40,9 @@ builder
 .addCase(fetchCountries.fulfilled, (state, { payload })=>{
 state.status='succeeded'
 state.all = payload
-// initialize derived view
+
 state.view = payload.slice(0, state.pageSize)
+state.total = payload.length
 })
 .addCase(fetchCountries.rejected, (state, action)=>{
 state.status='failed'
