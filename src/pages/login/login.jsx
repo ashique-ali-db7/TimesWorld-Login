@@ -1,5 +1,5 @@
 // // import { useState } from 'react'
-import { Container, Row, Col, Form, Button} from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 // // import { useDispatch } from 'react-redux'
 // // import { loginSuccess } from '../slices/authSlice'
 import './login.css'
@@ -9,7 +9,7 @@ const PASS_RX = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/
 
 const Login = () => {
   return (
-    <Container fluid  className="custom-container">
+    <Container fluid className="custom-container">
       <Row className="vh-100">
         <Col
           md={6}
@@ -69,7 +69,7 @@ const Login = () => {
         <Col
           className="desktop-only d-md-flex justify-content-center align-items-center"
         >
-        <img src="src/assets/images/login.png" alt="img" />
+          <img src="src/assets/images/login.png" alt="img" />
         </Col>
 
       </Row>
