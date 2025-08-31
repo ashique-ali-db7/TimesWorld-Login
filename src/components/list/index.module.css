@@ -1,0 +1,42 @@
+.galleryImage {
+  width: 48px !important;
+  height: 46px !important;
+}
+
+.countryRegion {
+  color: #6F6F6F !important;
+  font-size: 13px;
+}
+
+
+
+.customCard {
+  border: 2px solid var(--color-heading) !important;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1); 
+  transition: box-shadow 0.2s ease-in-out;
+   padding: 15px 11px;
+   border-radius: 0 !important;
+
+}
+
+.button{
+    width:146px;
+    height:48px;
+    font-size: 16px;
+    background-color: var(--color-text) !important; 
+    border: none !important;
+}
+@media screen and (min-width: 567px) {
+  .galleryImage {
+    width: 127px !important;
+    height: 96px !important;
+  }
+
+  .countryRegion {
+    font-size: 16px;
+  }
+
+  .customCard {
+    padding: 18px 17px;
+  }
+}

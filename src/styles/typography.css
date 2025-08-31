@@ -26,7 +26,7 @@
 
 
 /* Responsive Typography */
-@media (max-width: 767px) {
+@media (max-width: 567px) {
   .text-lg {
     font-size: var(--font-size-lg-mobile);
     /* 24px -> 16px */

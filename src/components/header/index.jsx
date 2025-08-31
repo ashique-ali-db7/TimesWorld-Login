@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Row, Col, Nav,  Navbar,Offcanvas } from 'react-bootstrap';
+import './index.css';
 const Header = ({ setActiveTab, activeTab }) => {
     const [showOffcanvas, setShowOffcanvas] = useState(false);
     const handleTabChange = (tab) => {

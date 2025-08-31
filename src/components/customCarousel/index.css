@@ -1,0 +1,227 @@
+
+/* ---------- Carousel Wrapper ---------- */
+.custom-carousel-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ---------- Carousel Card (container) ---------- */
+.custom-carousel-card {
+  width: 100%;
+  border: 2px solid #3D3D3D !important;
+  background-color: #f8f9fa;
+  box-shadow: none;
+  border-radius: 8px;
+  /* min-height: 340px;         */
+  overflow: hidden;
+  position: relative;
+  
+}
+
+
+
+/* Slightly smaller for small screens */
+@media (max-width: 767px) {
+  .custom-carousel-card {
+    /* min-height: 320px; */
+  }
+}
+
+/* ---------- Make Bootstrap Carousel fill the card ---------- */
+.custom-bootstrap-carousel,
+.custom-bootstrap-carousel .carousel-inner,
+.custom-bootstrap-carousel .carousel-item {
+background-color: #F0F0F0;
+ height: 200px;
+
+}
+@media (min-width: 576px) {
+ .custom-bootstrap-carousel,
+.custom-bootstrap-carousel .carousel-inner,
+.custom-bootstrap-carousel .carousel-item {
+   height: 497px;
+}
+}
+
+/* Make carousel inner have rounded corners at top (if needed) */
+.custom-bootstrap-carousel .carousel-inner {
+  border-radius: 6px 6px 0 0;
+
+}
+
+/* Smooth slide transform */
+.custom-bootstrap-carousel .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* ---------- Slide Content (centered) ---------- */
+.slide-content {
+  height: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+ 
+}
+
+/* Smaller padding on small screens */
+@media (max-width: 767px) {
+  .slide-content {
+    padding: 30px 15px;
+  }
+}
+@media (max-width: 375px) {
+  .slide-content {
+    padding: 25px 10px;
+  }
+}
+
+/* ---------- Slide Icon / Image ---------- */
+.slide-icons {
+  margin-bottom: 30px;
+}
+.custom-img {
+
+  border-radius: 20%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+@media (min-width: 576px) {
+  .custom-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ---------- Optional Slide Text ---------- */
+.slide-text {
+  max-width: 420px;
+  margin-top: 8px;
+}
+.slide-title {
+  color: var(--color-dark-primary, #222);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.slide-description {
+  color: var(--color-dark-secondary, #666);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- INLINE Overlay BUTTONS (prev / next) ---------- */
+.carousel-inline-btn {
+  position: absolute;
+  bottom: 12px;                 
+  transform: translateY(0);      
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  z-index: 6;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* .carousel-inline-btn:hover {
+  transform: translateY(-50%) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+.carousel-inline-btn:active {
+  transform: translateY(-50%) scale(.98);
+}
+.carousel-inline-btn:focus {
+  outline: 3px solid rgba(0,123,255,0.18);
+  outline-offset: 2px;
+} */
+
+/* Left / Right offsets */
+.carousel-inline-btn--prev {
+  left: 50%;
+  transform: translateX(-50px); /* adjust spacing left of dot pill */
+}
+
+.carousel-inline-btn--next {
+  left: 50%;
+  transform: translateX(30px);  /* adjust spacing right of dot pill */
+}
+/* Smaller buttons on very small screens */
+@media (max-width: 420px) {
+  .carousel-inline-btn {
+ 
+    left: 8px;
+    right: 8px;
+  }
+}
+
+/* Option: make buttons semi-transparent on mobile to avoid covering content too much */
+
+/* Ensure dot pill is above carousel bg and not overlapped by card border */
+.carousel-indicators-custom { z-index: 7; }
+
+/* ---------- DOT INDICATORS (center bottom) ---------- */
+.carousel-indicators-custom {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 8px;
+  display: flex;
+  z-index: 6;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+
+/* Dot styles */
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: #dee2e6;
+  cursor: pointer;
+  padding: 0;
+  transition: transform .12s ease, background-color .12s ease;
+}
+.indicator-dot.active {
+  background-color: #6c757d;
+  transform: scale(1.08);
+}
+.indicator-dot:hover { background-color: #adb5bd; }
+.indicator-dot:focus {
+  outline: 3px solid rgba(0,123,255,0.18);
+  outline-offset: 2px;
+}
+
+/* ---------- Accessibility helpers ---------- */
+/* Ensure buttons are keyboard-focusable and visible */
+.carousel-inline-btn,
+.indicator-dot {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Misc helpers (if you use nav btn classes elsewhere) ---------- */
+.carousel-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #6c757d;
+  background: transparent;
+}
+
+
