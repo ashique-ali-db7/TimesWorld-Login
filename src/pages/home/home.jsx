@@ -8,7 +8,7 @@ import Google from '../../assets/icons/google';
 import Facebook from '../../assets/icons/facebook';
 import Linkedin from '../../assets/icons/linkidin';
 import Github from '../../assets/icons/github';
-
+import Shapes from '../../assets/images/shapes.png'
 const Home = () => {
   const [activeTab, setActiveTab] = useState('all');
 
@@ -47,7 +47,7 @@ const Home = () => {
               <Card.Body className="d-flex flex-column card-body justify-content-center align-items-center text-center">
                 <div>
                   <img
-                    src="src/assets/images/shapes.png"
+                    src={Shapes}
                     alt="shapes"
                     className={styles.customImg}
                   />

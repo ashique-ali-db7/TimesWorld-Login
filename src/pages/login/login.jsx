@@ -6,7 +6,7 @@ import Google from "../../assets/icons/google";
 import Facebook from "../../assets/icons/facebook";
 import Github from "../../assets/icons/github";
 import Linkedin from "../../assets/icons/linkidin";
-
+import loginImage from '../assets/images/login.png';
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -118,7 +118,7 @@ const Login = () => {
         </Col>
 
         <Col className="desktop-only d-md-flex justify-content-center align-items-center">
-          <img src="src/assets/images/login.png" alt="img" />
+          <img src={loginImage} alt="img" />
         </Col>
       </Row>
     </Container>

@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import styles from "./index.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries, loadMore } from "../../slices/countriesSlice";
-
+import Gallery from '../../assets/images/gallery.png'
 const CountryGrid = () => {
     const dispatch = useDispatch();
     const { view, status, error, total } = useSelector(
@@ -26,7 +26,7 @@ const CountryGrid = () => {
                             <Card.Body className="d-flex align-items-start gap-3 p-0">
                              
                                 <img
-                                    src={country.flag || "src/assets/images/gallery.png"}
+                                    src={country.flag || <Gallery/>}
                                     alt=""
                                     className={styles.galleryImage} 
                                 />
